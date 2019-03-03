@@ -5,7 +5,7 @@ import {Global, css} from "@emotion/core"
 import Header from "./header"
 
 import '../../theme/prism/css/dracula-prism.css'
-const Layout = ({ children }) => (
+const Layout = ({ children, showHeader }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -30,7 +30,7 @@ const Layout = ({ children }) => (
           }
           body {             
             margin: 0;                       
-            margin-top: 50px;
+            ${showHeader && "margin-top: 50px;"}
           }
           * {
             box-sizing: inherit;
@@ -94,23 +94,20 @@ const Layout = ({ children }) => (
             margin-bottom: .6em;
           }                
         `} />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 1200,
-            padding: `1.0875rem 1.45rem`
-          }}
-        >
-          <main>{children}</main>
-        </div>
+        {showHeader && <Header siteTitle={data.site.siteMetadata.title} />}
+        <main>{children}</main>
       </>
     )}
   />
 )
 
+Layout.defaultProps = {
+  showHeader: true
+}
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  showHeader: PropTypes.bool
 }
 
 export default Layout
