@@ -20,7 +20,7 @@ const Layout = ({ children }) => (
       <>
       <Global
         styles={css`
-        @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+        @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|family=Source+Sans+Pro');
 
           html {
             font: calc(1vw + 0.5em) 'Source Sans Pro', sans-serif;

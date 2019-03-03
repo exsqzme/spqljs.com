@@ -12,7 +12,7 @@ const SPSite = spql.connect(siteUrl)
 const SPList = SPSite.List(listName|listGUID)
 ```
 
-## getSchema
+## getSchema()
 
 ```javascript
 SPList.getSchema()
@@ -20,7 +20,7 @@ SPList.getSchema()
 // and Field Info {displayName, staticName, description, type, isHidden, isReadOnly, isFormBaseType, ?[choice], ?{lookup}}
 ```
 
-## count
+## count()
 
 ```javascript
 SPList.count(?where)
@@ -32,7 +32,7 @@ SPList.count(?where)
 CAML (e.g. <Eq><FieldRef Name="staticName" /><Value Type="fieldType">{value}</Value></Eq>) *spql.Caml
 
 
-## all
+## all()
 
 ```javascript
 SPList.all({
@@ -63,7 +63,7 @@ fieldName|{staticName, isAscending}
 
 Limit amount of returned records
 
-## find
+## find()
 
 ```javascript
 SPList.find({
@@ -99,7 +99,7 @@ fieldName|{staticName, isAscending}
 
 Limit amount of returned records
 
-## findOne
+## findOne()
 
 ```javascript
 SPList.findOne({
@@ -121,7 +121,7 @@ fieldName|{staticName, alias, type, mapFn}
 
 CAML (e.g. <Eq><FieldRef Name="staticName" /><Value Type="fieldType">{value}</Value></Eq>) **spql.Caml
 
-## findById
+## findById()
 
 ```javascript
 SPList.findById({
@@ -139,7 +139,7 @@ Field|[Field]
 
 fieldName|{staticName, alias, type, mapFn}
 
-## create
+## create()
 
 ```javascript
 SPList.create(NewItem|[NewItems])
@@ -150,7 +150,7 @@ SPList.create(NewItem|[NewItems])
 
 {staticName: value}
 
-## updateById
+## updateById()
 
 ```javascript
 SPList.updateById(id, Updates)
@@ -161,7 +161,7 @@ SPList.updateById(id, Updates)
 
 {staticName: value}
 
-## deleteById
+## deleteById()
 
 ```javascript
 SPList.deleteById(id)

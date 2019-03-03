@@ -19,7 +19,8 @@ const Header = ({ siteTitle }) => (
         alignItems: 'center',
         margin: `0 auto`,
         maxWidth: 1200,
-        padding: `0 1rem`        
+        padding: `0 1rem`,
+        height: `100%`    
       }}
     >
       <Link
@@ -27,7 +28,7 @@ const Header = ({ siteTitle }) => (
         style={{
           color: '#ff7e5f',
           textDecoration: `none`,
-          fontSize: '40px'
+          fontSize: '33px'
         }}
       >
         {siteTitle}
@@ -59,7 +60,8 @@ const Header = ({ siteTitle }) => (
                   color: '#ff7e5f',
                   opacity: '.8'
                 },
-                margin: '0 1.5em'
+                margin: '0 1.5em',
+                fontSize: '20px'
               }}
               activeStyle={{color: '#ff7e5f'}}
             >
@@ -78,7 +80,8 @@ const Header = ({ siteTitle }) => (
                   color: '#ff7e5f',
                   opacity: '.8'
                 },
-                flex: '1'
+                flex: '1',
+                fontSize: '20px'
               }}
               activeStyle={{color: '#ff7e5f'}}
             >

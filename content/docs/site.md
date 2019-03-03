@@ -11,14 +11,14 @@ import spql from 'spql'
 const SPSite = spql.connect('/')
 ```
 
-## getListCollectionInfo
+## getListCollectionInfo()
 
 ```javascript
 SPSite.getListCollectionInfo()
 // => {Promise,<Array>} The Site's List Info {id, name, siteUrl, description, createdBy, created, modified, itemCount, defaultViewUrl, isDocumentList, isHidden}
 ```
 
-## uploadDocument
+## uploadDocument()
 
 ```javascript
 SPSite.uploadDocument({
@@ -36,35 +36,35 @@ Uploads a document to a document libary under the site.
 
 {displayName, staticName, type, value}
 
-## getUserById
+## getUserById()
 
 ```javascript
 SPSite.getUserById(UserID)
 // => {Promise,<?Object>} The User {id, account, displayName, email}
 ```
 
-## getCurrentUser
+## getCurrentUser()
 
 ```javascript
 SPSite.getCurrentUser()
 // => {Promise,<?Object>} The Current User {id, account, displayName, email}
 ```
 
-## getGroupsFromUser
+## getGroupsFromUser()
 
 ```javascript
 SPSite.getGroupsFromUser(userLoginName)
 // => {Promise,<Array>} The User's Groups {id, name, description}
 ```
 
-## getUsersInGroup
+## getUsersInGroup()
 
 ```javascript
 SPSite.getUsersInGroup(groupName)
 // => {Promise,<Array>} The Users in Group {id, account, displayName, email}
 ```
 
-## createGroup
+## createGroup()
 
 ```javascript
 SPSite.createGroup({
@@ -77,35 +77,35 @@ SPSite.createGroup({
 // => {Promise,<Object>} Results {isSuccess, error}
 ```
 
-## deleteGroup
+## deleteGroup()
 
 ```javascript
 SPSite.deleteGroup(groupName)
 // => {Promise,<Object>} Results {isSuccess, error}
 ```
 
-## addUsersToGroup
+## addUsersToGroup()
 
 ```javascript
 SPSite.addUserToGroup(groupName, userLoginName|[userLoginName])
 // => {Promise,<Object>} Results {isSuccess, error}
 ```
 
-## deleteUsersFromGroup
+## deleteUsersFromGroup()
 
 ```javascript
 SPSite.deleteUserFromGroup(groupName, userLoginName|[userLoginName])
 // => {Promise,<Object>} Results {isSuccess, error}
 ```
 
-## isUserInGroup
+## isUserInGroup()
 
 ```javascript
 SPSite.isUserInGroup(userId, groupId|[groupId])
 // => {Promise,<boolean>}
 ```
 
-## isCurrentUserInGroup
+## isCurrentUserInGroup()
 
 ```javascript
 SPSite.isCurrentUserInGroup(groupId|[groupId])

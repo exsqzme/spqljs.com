@@ -1,4 +1,4 @@
-import React, {Fragment} from "react"
+import React from "react"
 
 import SEO from "../components/seo"
 import {css} from "@emotion/core"
@@ -13,13 +13,15 @@ const IndexPage = () => (
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      max-height: 600px;
+      height: 40vh;
+      @media (min-width: 600px) {
+        height: 60vh;
+      }
     `}>
       <div>
         <h1 css={{
           color: '#ff7e5f',
-          fontSize: '4rem',
+          fontSize: '3.2rem',
           margin: '0'
         }}>SPQL</h1>
         <p
@@ -52,10 +54,16 @@ const IndexPage = () => (
         render={data => data.allMarkdownRemark.edges.map((edge, i) => (
           <article
             css={{
+              marginBottom: '1.2em'
             }}
             key={i}
           >
-            <h2>
+            <h2
+              css={{
+                 marginTop: '0',          
+                 marginBottom: '.1em',
+                 fontWeight: '600'
+            }}>
               {edge.node.frontmatter.title}
             </h2>
             <p
@@ -85,7 +93,7 @@ query {
           frontmatter {
             title
           }
-          excerpt
+          excerpt(pruneLength: 500)
         }
       }
     }

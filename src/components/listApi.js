@@ -6,13 +6,21 @@ const ListAPI = () => {
       <StaticQuery
         query={gettingStartedQuery}
         render={data => data.allMarkdownRemark.edges.map(edge => (
-            <div key={edge.node.id}>
-              <h1>{edge.node.frontmatter.title}</h1>
-              <div dangerouslySetInnerHTML={{__html: edge.node.html}} />
-            </div>
-          ))
-        }
-      />
+          <div key={edge.node.id}>
+            <h1>{edge.node.frontmatter.title}</h1>
+            <div
+              css={{
+                "& h2": {
+                  color: "#ff7e5f",
+                  fontFamily: "'Source Code Pro', monospace"
+                }
+              }}
+              dangerouslySetInnerHTML={{__html: edge.node.html}}
+            />
+          </div>
+        ))
+      }
+    />
   )
 }
 
